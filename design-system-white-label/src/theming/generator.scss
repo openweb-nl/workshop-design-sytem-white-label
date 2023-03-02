@@ -1,7 +1,25 @@
+@import './styles/reset';
+@import './styles/global';
 @import './styles/colors';
+@import './themes';
 
 :root {
   @each $key, $value in $colors {
     --color-#{$key}: #{$value};
   }
 }
+
+// First loop trough themes
+@each $theme, $modes in $themes {
+  // Now loop trough the modes within themes
+    @each $mode, $variables in $modes {
+      [data-mode='#{$mode}'][data-company='#{$theme}'] {
+        // Now add all components with their specific styles
+        @each $component, $styles in $variables {
+          @each $key, $value in $styles {
+            --#{$component}-#{$key}: #{$value};
+          }
+        }
+      }
+    }
+  }

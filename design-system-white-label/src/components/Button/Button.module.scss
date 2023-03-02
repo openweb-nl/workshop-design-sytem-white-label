@@ -1,6 +1,7 @@
 .btn {
-  border: solid 1px black;
-  background: var(--primary-color);
+  border: 0;
+  background: var(--button-background);
+  color: var(--button-color);
   padding: var(--spacing-md);
   font-size: 1rem;
 }

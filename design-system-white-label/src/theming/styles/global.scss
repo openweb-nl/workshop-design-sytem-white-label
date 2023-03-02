@@ -2,13 +2,6 @@
   --spacing-md: 1rem;
 }
 
-[data-mode='light'] {
-  --primary-color: #95C23D;
-}
-[data-mode='dark'] {
-  --primary-color: #ffffff;
-}
-
 .rounded {
   border-radius: 999rem;
 }

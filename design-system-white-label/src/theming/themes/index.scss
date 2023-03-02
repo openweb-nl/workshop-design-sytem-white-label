@@ -1,0 +1,7 @@
+@import './openweb';
+@import './pauwels';
+
+$themes: (
+  openweb: $ow-theme,
+  pauwels: $pw-theme,
+)
