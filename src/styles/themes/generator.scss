@@ -1,0 +1,20 @@
+@use './default' as defaultTheme;
+@use './openweb' as openwebTheme;
+
+$themes: (
+  default: defaultTheme.$theme,
+  openweb: openwebTheme.$theme,
+);
+
+@each $theme, $modes in $themes {
+  @each $mode, $variables in $modes {
+    @warn ' --- #{$theme}-#{$mode}';
+    [data-theme='#{$theme}-#{$mode}'] {
+      @each $component, $styles in $variables {
+        @each $key, $value in $styles {
+          --#{$component}-#{$key}: #{$value};
+        }
+      }
+    }
+  }
+}

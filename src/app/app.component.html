@@ -1,0 +1,10 @@
+<router-outlet></router-outlet>
+
+<ng-container *ngFor="let brand of brands">
+  <ng-container *ngFor="let theme of themes">
+    <design-system-theme-wrapper
+      [brand]="brand"
+      [theme]="theme"
+    ></design-system-theme-wrapper>
+  </ng-container>
+</ng-container>

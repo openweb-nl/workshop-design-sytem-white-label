@@ -1,0 +1,18 @@
+$theme: (
+  light: (
+    button: (
+      color: var(--color-red-100),
+      background-color: var(--color-red-800),
+      hover-color: var(--color-red-300),
+      hover-background-color: var(--color-red-900),
+    ),
+  ),
+  dark: (
+    button: (
+      color: var(--color-green-100),
+      background-color: var(--color-green-800),
+      hover-color: var(--color-green-300),
+      hover-background-color: var(--color-green-900),
+    ),
+  ),
+);

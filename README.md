@@ -252,7 +252,7 @@ Openweb only:
 
 Pauwel only:
 -Has an icon on the right (use + for closed state and - for open)
--Icon's are apart from text as in fully to the right. 
+-Icon's are apart from text as in fully to the right.
 -No border beteen questions
 ```
 All other style options are up to you to create an easy to use component.

@@ -1,0 +1,18 @@
+a {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  text-align: center;
+  transition: all 0.2s;
+  border: 0;
+}
+a:hover {
+  cursor: pointer;
+  color: var(--button-hover-color);
+  background-color: var(--button-hover-background-color);
+}
