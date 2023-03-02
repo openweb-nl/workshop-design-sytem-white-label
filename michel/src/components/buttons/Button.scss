@@ -1,0 +1,12 @@
+button {
+  color: var(--button-color);
+  background-color: var(--button-background);
+}
+
+[data-mode='light'] {
+  --primary-color: #95C23D;
+}
+
+[data-mode='dark'] {
+  --primary-color: #ffffff;
+}

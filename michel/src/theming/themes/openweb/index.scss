@@ -1,0 +1,7 @@
+@import './light';
+@import './dark';
+
+$ow-theme: (
+        light: $light,
+        dark: $dark,
+)

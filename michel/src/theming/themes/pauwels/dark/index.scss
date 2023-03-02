@@ -1,0 +1,7 @@
+@import './button';
+@import './FAQ';
+
+$dark: (
+        button: $button,
+        faq: $faq,
+)

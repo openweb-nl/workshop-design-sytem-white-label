@@ -1,0 +1,7 @@
+@import './button';
+@import './FAQ';
+
+$light: (
+        button: $button,
+        faq: $faq,
+)

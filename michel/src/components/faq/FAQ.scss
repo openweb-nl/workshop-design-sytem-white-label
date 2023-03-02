@@ -1,0 +1,17 @@
+details {
+  width: 100%;
+  border-top: var(--faq-top-line);
+  margin-bottom: 10px;
+
+  summary {
+    border-bottom: var(--faq-bottom-line);
+  }
+
+  summary:after {
+    content: "+";
+  }
+
+  &[open] summary:after {
+    content: "-";
+  }
+}
