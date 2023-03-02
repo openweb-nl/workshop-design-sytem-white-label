@@ -1,6 +1,6 @@
 # Workshop Design System & Whitelabeling
 
-This repo is used for the workshop with Design system and Whitelabeling. Where this readme is used to guide the participants to create an application which is able to change style depending on company but also light and dark mode.
+This repo is used for the workshop with Design system and Whitelabeling. Where this readme is used to guide the participants to create an application which is able to change style depending on company but also themes like light and dark.
 
 ---
 
@@ -33,18 +33,18 @@ To do the workshop with react use following steps:
 Start project with: `npm start`
 
 ### Svelte or Vue or anything else
-No easy setup codes for you but you might know yourself.
+No easy setup codes for you but you might know it yourself.
 It's recommended to have `typescript`, `scss` and `hot-reload` in your environment.
 
 ---
 
 ## Part 1
-We will start out with a simple component: `Button` (with capital B).
+We will start out with a simple component: `Button`.
 In your environment create a component which will output something similar as this in html:
 #### `<button ...props>[This data should come from parent]</button>`
 Add this button to your app so you can see it in the browser.
 
-Next up in the main.scss file (app.scss) we will add:
+Next up in the main.scss file (styles.scss) we will add:
  ```
     :root {
         --primary-color: #95C23D;
@@ -65,7 +65,7 @@ This works for more than just colors try to create a nice button by using variab
 ## Part 2
 Ok so now we have a nice button let's start making themes for this button. Without the need to provide this in your `Button` component.
 This can be done in a few ways personally I like to use data-attributes for this. Inside your main component(app).
-We will do something like:
+Do something like this:
 ```
     <div data-mode='light'>
         <Button>My light button</Button>
@@ -117,7 +117,7 @@ $colors: (
         openweb: #95C23D,
         pauwels: #FF5B00,
         white: #ffffff,
-        // You can add more colours than just these two
+        // You can add more colours than just these
 )
 ```
 Inside the `theming` folder create a `generator.scss` in this file we add the following magic.
@@ -130,7 +130,7 @@ Inside the `theming` folder create a `generator.scss` in this file we add the fo
   }
 }
 ```
-When you created both files make sure that inside `app.scss` you import the `generator.scss` file.
+When you created both files make sure that inside `styles.scss` you import the `generator.scss` file.
 
 Now inside your browser inspect the `:root` and you can see that all colors are available. Note that al your color names will have a prefix call `--color-[name]`. Which is added within the for loop from the generator.scss.
 
@@ -180,9 +180,12 @@ $themes: (
 ```
 Now we need to create some more magic to make sure we can use the tokens you just made available for your component(s). Inside your `generator.scss` file we will add some code:
 ```
+// First loop trough themes
 @each $theme, $modes in $themes {
+// Now loop trough the modes within themes
   @each $mode, $variables in $modes {
     [data-mode='#{$mode}'] {
+      // Now add all components with their specific styles
       @each $component, $styles in $variables {
         @each $key, $value in $styles {
           --#{$component}-#{$key}: #{$value};
@@ -250,6 +253,7 @@ Openweb only:
 Pauwel only:
 -Has an icon on the right (use + for closed state and - for open)
 -Icon's are apart from text as in fully to the right. 
+-No border beteen questions
 ```
 All other style options are up to you to create an easy to use component.
 
@@ -258,7 +262,7 @@ All other style options are up to you to create an easy to use component.
 ## Part 6
 The biggest issue here is to keep a clean architecture the more components you create the more variables will be available to you. I hope with this current setup you can scale this enough, or maybe you can think of an even better way.
 
-For this final part I want you to create a component of your own. Which uses the system we just created. Maybe think about some cool things you are currently using within your own project and could be styled in this new way.
+For this final part I want you to create a component of your own. Which uses the system we just created. Maybe think about something cool you are currently using within your own project and could be styled in this new way.
 
 When you have no inspiration you could consider one of the following:
 ```
