@@ -5,6 +5,16 @@ import { Container } from './components/Container/Container';
 import { Header } from './components/Header/Header';
 import styles from './App.module.scss';
 import './theming/generator.scss';
+import Faqs, { FaqType } from './components/Faqs/Faqs';
+
+const faqData:faqDataType = [
+  {
+    question: 'will this work?',
+    answer: 'Yes it will!'
+  },
+]
+
+type faqDataType = FaqType[];
 
 function App() {
   return (
@@ -20,10 +30,10 @@ function App() {
           <article>
             <h2>OpenWeb style</h2>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             </Paragraph>
           
-            <Button appearance="rounded">Read more!</Button>
+            <Button appearance="rounded">Dark mode button</Button>
           </article>
         </Container>
       </main>
@@ -42,7 +52,7 @@ function App() {
           <article>
             <h2>Pauwels section</h2>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Paragraph>
           
             <Button appearance="rounded">Dark mode</Button>
@@ -56,6 +66,8 @@ function App() {
             <Paragraph>And this is a bit with a light theme</Paragraph>
             <Button>And a button on light mode</Button>
           </article>
+
+          <Faqs items={faqData} />
         </Container>
       </section>
     </div>
