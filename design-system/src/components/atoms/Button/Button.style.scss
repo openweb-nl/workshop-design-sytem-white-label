@@ -1,0 +1,10 @@
+button {
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  border: 0;
+  margin: var(--spacing-S);
+
+  &:hover {
+    background-color: var(--button-hover-background-color);
+  }
+}

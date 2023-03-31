@@ -1,0 +1,24 @@
+@import './styles/colors';
+@import './themes/index.scss';
+
+:root {
+  @each $key, $value in $colors {
+    --color-#{$key}: #{$value};
+  }
+}
+
+@debug 'bla #{$themes}';
+
+@each $theme, $modes in $themes {
+  @each $mode, $variables in $modes {
+    [data-mode='#{$mode}'][data-brand='#{$theme}'],
+    [data-brand='#{$theme}'] [data-mode='#{$mode}'] {
+      // Now add all components with their specific styles
+      @each $component, $styles in $variables {
+        @each $key, $value in $styles {
+          --#{$component}-#{$key}: #{$value};
+        }
+      }
+    }
+  }
+}

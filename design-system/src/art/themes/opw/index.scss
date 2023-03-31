@@ -1,0 +1,7 @@
+@import './light';
+@import './dark';
+
+$opw-theme: (
+  light: $light,
+  dark: $dark,
+);

@@ -1,0 +1,7 @@
+@import './opw/index.scss';
+@import './tessa/index.scss';
+
+$themes: (
+  openweb: $opw-theme,
+  tessa: $tessa-theme,
+)
